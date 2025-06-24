@@ -1,0 +1,350 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --cream: #faf8f3;
+  --header-height: 80px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: transparent;
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header.scrolled {
+  background: rgba(250, 248, 243, 0.98);
+  box-shadow: 0 1px 0 rgba(196, 165, 114, 0.08);
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 5vw, 80px);
+}
+
+/* Menu Toggle */
+.menuToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.menuLines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+}
+
+.menuLines span {
+  height: 1px;
+  background: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.menuLines span:first-child {
+  width: 100%;
+}
+
+.menuLines span:last-child {
+  width: 60%;
+}
+
+.menuToggle:hover .menuLines span:last-child {
+  width: 100%;
+}
+
+.menuLabel {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoSymbol {
+  width: 48px;
+  height: 48px;
+  color: var(--champagne-foil);
+  transition: all 0.3s ease;
+}
+
+.header.scrolled .logoSymbol {
+  width: 40px;
+  height: 40px;
+}
+
+.logoWordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logoMain {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.logoTag {
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive-dust);
+  opacity: 0.8;
+}
+
+.header.scrolled .logoMain {
+  font-size: 22px;
+}
+
+/* Shop CTA */
+.shopButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--ink);
+  color: var(--cream);
+  text-decoration: none;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.shopButton span {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shopButton svg {
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.shopButton:hover {
+  background: var(--champagne-foil);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(196, 165, 114, 0.2);
+}
+
+.shopButton:hover svg {
+  opacity: 1;
+}
+
+/* Slide Menu */
+.slideMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 480px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--cream);
+  z-index: 2000;
+  transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -10px 0 40px rgba(42, 41, 38, 0.1);
+}
+
+.slideMenu.show {
+  right: 0;
+}
+
+.closeMenu {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.closeMenu:hover {
+  transform: rotate(90deg);
+}
+
+.closeMenu svg {
+  color: var(--ink);
+}
+
+.menuContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 120px 60px 60px;
+}
+
+.menuNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuNav a {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px 16px;
+  padding: 24px 32px;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  align-items: start;
+}
+
+.menuNav a:hover {
+  background: rgba(232, 234, 224, 0.5);
+  transform: translateX(8px);
+}
+
+.navIndex {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--champagne-foil);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navTitle {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.navDesc {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  color: var(--olive-dust);
+}
+
+.menuFooter {
+  padding-top: 40px;
+  border-top: 1px solid rgba(139, 149, 109, 0.2);
+}
+
+.menuTagline {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.menuDivider {
+  width: 60px;
+  height: 1px;
+  background: var(--champagne-foil);
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.menuInfo {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive-dust);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .logoWordmark {
+    display: none;
+  }
+
+  .menuLabel {
+    display: none;
+  }
+
+  .shopButton span {
+    display: none;
+  }
+
+  .shopButton {
+    padding: 12px;
+    border-radius: 50%;
+  }
+
+  .menuContent {
+    padding: 100px 32px 32px;
+  }
+
+  .navTitle {
+    font-size: 22px;
+  }
+}
+
+/* Small height screens */
+@media (max-height: 700px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .logoSymbol {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header.scrolled .logoSymbol {
+    width: 36px;
+    height: 36px;
+  }
+}

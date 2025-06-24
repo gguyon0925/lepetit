@@ -1,0 +1,251 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --header-height: 100px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: var(--header-height);
+  background: var(--parchment);
+  overflow: hidden;
+}
+
+.heroContainer {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: clamp(40px, 8vw, 120px);
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vh, 80px);
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.smallText {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(12px, 1.5vw, 16px);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne-foil);
+  margin-bottom: clamp(20px, 3vh, 40px);
+  animation: fadeIn 1s ease-out;
+}
+
+.largeText {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 400;
+  line-height: 0.9;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  animation: slideUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.largeText:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.largeText:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.largeText:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(40px, 6vw, 80px);
+  animation: fadeIn 1s ease-out 0.5s;
+  animation-fill-mode: both;
+}
+
+.tagline {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: var(--olive-dust);
+  max-width: 300px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--ink);
+  color: var(--parchment);
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background: var(--champagne-foil);
+  transform: translateY(-2px);
+}
+
+.imageContainer {
+  position: relative;
+  animation: fadeIn 1.2s ease-out 0.3s;
+  animation-fill-mode: both;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  max-height: 70vh;
+  box-shadow: 0 30px 60px rgba(42, 41, 38, 0.1);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.imageWrapper:hover .heroImage {
+  transform: scale(1.05);
+}
+
+.imageDecoration {
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 120%;
+  height: 60%;
+  background: var(--sage-mist);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: clamp(24px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive-dust);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: var(--olive-dust);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollLine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--champagne-foil);
+  animation: scrollMove 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes scrollMove {
+  to {
+    left: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .heroContainer {
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroMeta {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .imageContainer {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .scrollIndicator {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

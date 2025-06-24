@@ -1,0 +1,256 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+
+  /* Responsive header heights */
+  --header-height: 64px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(245, 241, 235, 0.85);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(139, 149, 109, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(42, 41, 38, 0.08);
+  height: var(--header-height);
+}
+
+.header.scrolled {
+  background: rgba(245, 241, 235, 0.95);
+  box-shadow: 0 4px 16px rgba(42, 41, 38, 0.12);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.logoImg {
+  height: 36px;
+  width: auto;
+  max-width: 160px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 1px 2px rgba(42, 41, 38, 0.1));
+}
+
+.logoImg:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 2px 4px rgba(42, 41, 38, 0.15));
+}
+
+.nav {
+  display: none;
+  gap: 24px;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--champagne-foil);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: var(--champagne-foil);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.mobileMenuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.mobileMenuBtn:hover {
+  transform: scale(1.1);
+}
+
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 3px 0;
+}
+
+.mobileMenuBtn.open .hamburger:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobileMenuBtn.open .hamburger:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.mobileMenuBtn.open .hamburger:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(245, 241, 235, 0.98);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.mobileNav.open {
+  transform: translateX(0);
+}
+
+.mobileNavLink {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border-radius: 32px;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 200px;
+}
+
+.mobileNavLink:hover {
+  background: var(--champagne-foil);
+  color: var(--parchment);
+  transform: scale(1.05);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .headerContent {
+    padding: 0 32px;
+  }
+
+  .logoImg {
+    height: 48px;
+    max-width: 220px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  .navLink {
+    font-size: 15px;
+  }
+
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .headerContent {
+    padding: 0 48px;
+  }
+
+  .logoImg {
+    height: 80px;
+    max-width: 320px;
+  }
+
+  .nav {
+    gap: 40px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  :root {
+    --header-height: 88px;
+  }
+
+  .headerContent {
+    padding: 0 64px;
+  }
+
+  .logoImg {
+    height: 100px;
+    max-width: 380px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .logoImg,
+  .navLink,
+  .mobileMenuBtn,
+  .hamburger,
+  .mobileNav,
+  .mobileNavLink {
+    transition: none;
+  }
+}

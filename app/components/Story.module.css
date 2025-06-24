@@ -1,0 +1,50 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+}
+
+.story {
+  background: var(--sage-mist);
+  padding: 4rem 0;
+}
+
+.storyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.storyQuote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--olive-dust);
+  quotes: "" " " "" "'" "'";
+}
+
+.storyText {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .storyContainer {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .storyContainer {
+    gap: 1.5rem;
+  }
+
+  .storyQuote {
+    font-size: 1.25rem;
+  }
+}

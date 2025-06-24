@@ -1,0 +1,250 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --cream: #faf8f3;
+  --header-height: 110px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header.scrolled {
+  background: rgba(250, 248, 243, 0.95);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  backdrop-filter: blur(20px) saturate(1.5);
+  box-shadow: 0 1px 0 rgba(196, 165, 114, 0.1),
+    0 4px 20px rgba(42, 41, 38, 0.03);
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 5vw, 80px);
+}
+
+/* Logo Badge */
+.logoBadge {
+  position: relative;
+  padding: 16px 24px;
+  background: var(--cream);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(42, 41, 38, 0.05);
+  transition: all 0.4s ease;
+}
+
+.header.scrolled .logoBadge {
+  padding: 12px 20px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.logoInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.logoTop {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--champagne-foil);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.logoBottom {
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+.logoAccent {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 1px;
+  background: var(--champagne-foil);
+  opacity: 0.5;
+}
+
+.header.scrolled .logoTop {
+  font-size: 20px;
+}
+
+.header.scrolled .logoBottom {
+  font-size: 9px;
+}
+
+/* Floating Navigation */
+.floatingNav {
+  display: flex;
+  gap: clamp(40px, 5vw, 60px);
+  background: rgba(245, 241, 235, 0.8);
+  padding: 20px 40px;
+  border-radius: 60px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(42, 41, 38, 0.06);
+  transition: all 0.4s ease;
+}
+
+.header.scrolled .floatingNav {
+  padding: 16px 32px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navNumber {
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--champagne-foil);
+  opacity: 0.6;
+}
+
+.navText {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.navHint {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+  border-radius: 20px;
+  opacity: 0;
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+.navLink:hover .navText {
+  color: var(--champagne-foil);
+}
+
+.navLink:hover .navNumber {
+  opacity: 1;
+}
+
+/* Contact Button */
+.contactBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: var(--ink);
+  color: var(--cream);
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.contactBtn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btnGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    var(--champagne-foil),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.contactBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(42, 41, 38, 0.2);
+}
+
+.contactBtn:hover .btnGlow {
+  opacity: 0.3;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .floatingNav {
+    display: none;
+  }
+
+  .contactBtn {
+    padding: 12px 24px;
+    font-size: 12px;
+  }
+
+  .logoTop {
+    font-size: 18px;
+  }
+
+  .logoBottom {
+    font-size: 9px;
+  }
+}

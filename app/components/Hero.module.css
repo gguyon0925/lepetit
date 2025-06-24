@@ -1,0 +1,33 @@
+/* Mobile-first: show single column layout by default */
+.heroSingle {
+  display: block;
+}
+
+.heroDouble {
+  display: none;
+}
+
+/* Show desktop/two-column version at 900px and above */
+@media (min-width: 900px) {
+  .heroSingle {
+    display: none;
+  }
+
+  .heroDouble {
+    display: block;
+  }
+}
+
+/* Ensure smooth transitions between layouts */
+@media (min-width: 900px) and (max-width: 1024px) {
+  .heroDouble {
+    display: block;
+  }
+}
+
+/* For very large screens, ensure optimal display */
+@media (min-width: 1600px) {
+  .heroDouble {
+    display: block;
+  }
+}

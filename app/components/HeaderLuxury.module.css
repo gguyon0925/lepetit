@@ -1,0 +1,157 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --header-height: 120px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: rgba(245, 241, 235, 0.7);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(196, 165, 114, 0.1);
+}
+
+.header.scrolled {
+  height: 90px;
+  background: rgba(245, 241, 235, 0.95);
+  box-shadow: 0 2px 20px rgba(42, 41, 38, 0.05);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 64px);
+  position: relative;
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  gap: clamp(32px, 4vw, 48px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navLeft {
+  left: clamp(24px, 4vw, 64px);
+}
+
+.navRight {
+  right: clamp(24px, 4vw, 64px);
+}
+
+.navLink {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--champagne-foil);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--champagne-foil);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.5s ease;
+}
+
+.logoMark {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink);
+  display: flex;
+  gap: 0.15em;
+  line-height: 1;
+}
+
+.logoMark span:first-child {
+  color: var(--champagne-foil);
+}
+
+.logoSubtext {
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--olive-dust);
+  opacity: 0.8;
+}
+
+.header.scrolled .logoMark {
+  font-size: clamp(28px, 3.5vw, 36px);
+}
+
+.header.scrolled .logoSubtext {
+  font-size: 10px;
+}
+
+/* Mobile Menu for smaller screens */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 80px;
+  }
+
+  .header.scrolled {
+    height: 70px;
+  }
+
+  .navLeft,
+  .navRight {
+    display: none;
+  }
+
+  .logoContainer {
+    margin: 0 auto;
+  }
+
+  .logoMark {
+    font-size: 28px;
+  }
+
+  .logoSubtext {
+    font-size: 10px;
+  }
+}
