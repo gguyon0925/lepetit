@@ -1,0 +1,10 @@
+To run the local server:
+npm run dev
+
+To stop the local server:
+press ctrl + c
+
+To push code so Greg can see it:
+git add .
+git commit -m "."
+git push
