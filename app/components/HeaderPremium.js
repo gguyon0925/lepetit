@@ -37,36 +37,19 @@ export default function HeaderPremium() {
 
           {/* Center: Logo */}
           <div className={styles.logo}>
-            <div className={styles.logoSymbol}>
-              <svg viewBox="0 0 50 50" fill="none">
-                <path
-                  d="M25 5 L15 15 L15 35 L25 45 L35 35 L35 15 Z"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                  fill="currentColor"
-                  fillOpacity="0.1"
-                />
-                <text
-                  x="25"
-                  y="30"
-                  textAnchor="middle"
-                  fontSize="14"
-                  fontFamily="Playfair Display"
-                  fill="currentColor"
-                >
-                  LP
-                </text>
-              </svg>
-            </div>
-            <div className={styles.logoWordmark}>
-              <span className={styles.logoMain}>Le Petit</span>
-              <span className={styles.logoTag}>Natural Luxury</span>
-            </div>
+            <img
+              src="/lepetit-logo.png"
+              alt="Le Petit - All Natural Bath & Body"
+              className={styles.logoImage}
+            />
           </div>
 
           {/* Right: Shop CTA */}
           <div className={styles.shopCta}>
-            <a href="#showcase" className={styles.shopButton}>
+            <a
+              href="https://www.etsy.com/shop/LePetitSoapCompany?ref=l2-about-shopname&from_page=listing"
+              className={styles.shopButton}
+            >
               <span>Boutique</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path

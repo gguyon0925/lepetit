@@ -1,0 +1,277 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --cream: #faf8f3;
+}
+
+.story {
+  background: var(--parchment);
+  padding: 4rem 0 3rem 0;
+}
+
+.storyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Founder Image Section */
+.founderImage {
+  position: relative;
+  padding: 1rem;
+  background: var(--parchment);
+  border: 1px solid var(--sage-mist);
+  box-shadow: 0 10px 30px rgba(42, 41, 38, 0.05);
+}
+
+.founderPhoto {
+  width: 100%;
+  display: block;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: sepia(0.1) contrast(0.9) brightness(1.05);
+}
+
+.captionText {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: var(--olive-dust);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Story Content Section */
+.storyContent {
+  padding-top: 0;
+}
+
+.storyHeader {
+  margin-bottom: 2rem;
+}
+
+.storyTitle {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.storySubtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: var(--olive-dust);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.storyQuote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--champagne-foil);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--champagne-foil);
+  quotes: none;
+}
+
+.storyText {
+  margin-bottom: 2rem;
+}
+
+.storyText p {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.storyText p:last-child {
+  margin-bottom: 0;
+}
+
+/* Founder Signature */
+.founderSignature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(139, 149, 109, 0.3);
+}
+
+.signatureLine {
+  height: 1px;
+  background: var(--champagne-foil);
+  flex: 1;
+  max-width: 80px;
+}
+
+.signatureText {
+  margin: 0;
+}
+
+.founderName {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: var(--ink);
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.founderTitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.85rem;
+  color: var(--olive-dust);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .storyContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .founderPhoto {
+    height: 350px;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .storyContent {
+    padding-top: 0;
+  }
+
+  .storyQuote {
+    padding-left: 0;
+    border-left: none;
+    border-top: 3px solid var(--champagne-foil);
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  .founderSignature {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .story {
+    padding: 3rem 0 2rem 0;
+  }
+
+  .storyContainer {
+    gap: 2.5rem;
+  }
+
+  .founderPhoto {
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  .storyHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .storyQuote {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .storyText {
+    margin-bottom: 1.5rem;
+  }
+
+  .storyText p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .founderSignature {
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .signatureLine {
+    max-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story {
+    padding: 2.5rem 0 1.5rem 0;
+  }
+
+  .storyContainer {
+    gap: 2rem;
+  }
+
+  .founderPhoto {
+    height: 280px;
+    border-radius: 8px;
+  }
+
+  .imageCaption {
+    margin-top: 0.75rem;
+  }
+
+  .captionText {
+    font-size: 0.85rem;
+  }
+
+  .storyHeader {
+    margin-bottom: 1.25rem;
+  }
+
+  .storyQuote {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .storyText {
+    margin-bottom: 1.25rem;
+  }
+
+  .storyText p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .founderSignature {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
+  .signatureLine {
+    width: 50px;
+    max-width: none;
+  }
+
+  .founderName {
+    font-size: 1rem;
+  }
+
+  .founderTitle {
+    font-size: 0.75rem;
+  }
+}

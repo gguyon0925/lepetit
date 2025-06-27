@@ -1,0 +1,352 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --cream: #faf8f3;
+}
+
+.philosophy {
+  background: var(--cream);
+  padding: 6rem 0;
+}
+
+.philosophyContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 5vw, 80px);
+}
+
+.philosophyHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.philosophyTitle {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.philosophySubtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: var(--olive-dust);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Principles Grid */
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.principleCard {
+  background: var(--parchment);
+  padding: 2.5rem;
+  border-radius: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(42, 41, 38, 0.05);
+}
+
+.principleCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(42, 41, 38, 0.1);
+}
+
+.principleNumber {
+  position: absolute;
+  top: -12px;
+  left: 2.5rem;
+  background: var(--champagne-foil);
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+}
+
+.principleTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.principleDescription {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: var(--olive-dust);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.principleFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.principleFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.principleFeature svg {
+  color: var(--champagne-foil);
+  flex-shrink: 0;
+}
+
+/* Ingredients Section */
+.ingredientsSection {
+  margin-bottom: 6rem;
+}
+
+.ingredientsHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ingredientsTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.ingredientsSubtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: var(--olive-dust);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ingredientsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ingredientCard {
+  background: var(--sage-mist);
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.ingredientCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(139, 149, 109, 0.15);
+}
+
+.ingredientHeader {
+  margin-bottom: 1rem;
+}
+
+.ingredientName {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.ingredientOrigin {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  color: var(--champagne-foil);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.ingredientBenefit {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: var(--olive-dust);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.ingredientDescription {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: var(--olive-dust);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Quality Promise */
+.qualityPromise {
+  background: var(--parchment);
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+}
+
+.promiseContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.promiseIcon {
+  color: var(--champagne-foil);
+  margin-bottom: 2rem;
+}
+
+.promiseTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.promiseText {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: var(--olive-dust);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.promiseBadges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.promiseBadge {
+  background: var(--champagne-foil);
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .principlesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ingredientsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy {
+    padding: 4rem 0;
+  }
+
+  .philosophyHeader {
+    margin-bottom: 3rem;
+  }
+
+  .principlesGrid {
+    margin-bottom: 4rem;
+  }
+
+  .principleCard {
+    padding: 2rem;
+  }
+
+  .principleNumber {
+    left: 2rem;
+  }
+
+  .ingredientsSection {
+    margin-bottom: 4rem;
+  }
+
+  .ingredientsGrid {
+    gap: 1rem;
+  }
+
+  .ingredientCard {
+    padding: 1.5rem;
+  }
+
+  .qualityPromise {
+    padding: 2.5rem;
+  }
+
+  .promiseBadges {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .philosophyHeader {
+    margin-bottom: 2rem;
+  }
+
+  .principlesGrid {
+    margin-bottom: 3rem;
+  }
+
+  .principleCard {
+    padding: 1.5rem;
+  }
+
+  .principleNumber {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .principleTitle {
+    margin-top: 0;
+  }
+
+  .ingredientsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .qualityPromise {
+    padding: 2rem;
+  }
+
+  .promiseBadges {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .promiseBadge {
+    display: inline-block;
+  }
+}

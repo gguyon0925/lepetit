@@ -4,6 +4,7 @@
   --olive-dust: #8b956d;
   --sage-mist: #e8eae0;
   --ink: #2a2926;
+  --cream: #faf8f3;
 }
 
 .showcase {
@@ -37,6 +38,7 @@
   overflow: hidden;
   border-radius: 12px;
   transition: transform 0.25s ease;
+  cursor: pointer;
 }
 
 .productCard:hover {
@@ -77,6 +79,229 @@
   opacity: 0.9;
 }
 
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(42, 41, 38, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--cream);
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(42, 41, 38, 0.3);
+  border: 2px solid var(--sage-mist);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--parchment);
+  border: 1px solid var(--sage-mist);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--olive-dust);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(42, 41, 38, 0.1);
+}
+
+.closeButton:hover {
+  background: var(--sage-mist);
+  color: var(--ink);
+  transform: scale(1.05);
+}
+
+.modalContent {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  height: 100%;
+  max-height: 600px;
+}
+
+.modalImage {
+  position: relative;
+  background: var(--parchment);
+  padding: 1.5rem;
+  border-right: 1px solid var(--sage-mist);
+}
+
+.modalImage img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(42, 41, 38, 0.15);
+}
+
+.modalDetails {
+  padding: 2rem;
+  overflow-y: auto;
+  background: var(--cream);
+}
+
+.modalHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--sage-mist);
+}
+
+.modalTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.modalScent {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: var(--champagne-foil);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.modalWeight {
+  display: inline-block;
+  background: var(--olive-dust);
+  color: var(--cream);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modalDescription {
+  margin-bottom: 1.5rem;
+}
+
+.modalDescription p {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.modalSection {
+  margin-bottom: 1.25rem;
+}
+
+.sectionLabel {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--olive-dust);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.sectionText {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modalOverlay {
+    padding: 1rem;
+  }
+
+  .modal {
+    max-height: 95vh;
+  }
+
+  .modalContent {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .modalImage {
+    border-right: none;
+    border-bottom: 1px solid var(--sage-mist);
+    padding: 1rem;
+  }
+
+  .modalDetails {
+    padding: 1.5rem;
+  }
+
+  .modalTitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+
+  .modalDetails {
+    padding: 1rem;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+
+  .closeButton {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Original responsive styles */
 @media (min-width: 960px) {
   .productGrid {
     grid-template-columns: repeat(3, 1fr);

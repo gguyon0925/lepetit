@@ -14,13 +14,13 @@
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: transparent;
+  background: var(--cream);
   z-index: 1000;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header.scrolled {
-  background: rgba(250, 248, 243, 0.98);
+  background: rgba(250, 248, 243, 0.95);
   box-shadow: 0 1px 0 rgba(196, 165, 114, 0.08);
 }
 
@@ -32,6 +32,7 @@
   max-width: 1800px;
   margin: 0 auto;
   padding: 0 clamp(32px, 5vw, 80px);
+  position: relative;
 }
 
 /* Menu Toggle */
@@ -84,48 +85,22 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.logoSymbol {
-  width: 48px;
-  height: 48px;
-  color: var(--champagne-foil);
+.logoImage {
+  height: 110px;
+  width: auto;
   transition: all 0.3s ease;
+  object-fit: contain;
 }
 
-.header.scrolled .logoSymbol {
-  width: 40px;
-  height: 40px;
-}
-
-.logoWordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.logoMain {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1;
-}
-
-.logoTag {
-  font-family: "Manrope", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--olive-dust);
-  opacity: 0.8;
-}
-
-.header.scrolled .logoMain {
-  font-size: 22px;
+.header.scrolled .logoImage {
+  height: 90px;
 }
 
 /* Shop CTA */
@@ -306,8 +281,12 @@
     --header-height: 70px;
   }
 
-  .logoWordmark {
-    display: none;
+  .logoImage {
+    height: 50px;
+  }
+
+  .header.scrolled .logoImage {
+    height: 42px;
   }
 
   .menuLabel {

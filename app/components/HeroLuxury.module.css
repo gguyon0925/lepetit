@@ -10,11 +10,12 @@
 .hero {
   min-height: 100vh;
   padding-top: var(--header-height);
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     var(--sage-mist) 50%,
     var(--parchment) 50%
-  );
+  ); */
+  background: var(--parchment);
   position: relative;
   overflow: hidden;
 }

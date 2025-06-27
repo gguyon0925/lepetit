@@ -1,0 +1,390 @@
+:root {
+  --parchment: #f5f1eb;
+  --champagne-foil: #c4a572;
+  --olive-dust: #8b956d;
+  --sage-mist: #e8eae0;
+  --ink: #2a2926;
+  --cream: #faf8f3;
+}
+
+.testimonials {
+  background: var(--sage-mist);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonialsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 5vw, 80px);
+}
+
+.testimonialsHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonialsTitle {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.testimonialsSubtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  color: var(--olive-dust);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Carousel Container */
+.testimonialCarousel {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.carouselTrack {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.testimonialSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.testimonialSlide.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--champagne-foil);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 2rem;
+  color: var(--champagne-foil);
+}
+
+.rating svg {
+  width: 24px;
+  height: 24px;
+}
+
+.testimonialText {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  quotes: none;
+  font-weight: 300;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(139, 149, 109, 0.2);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  background: var(--champagne-foil);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarInitial {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.authorDetails {
+  text-align: left;
+  flex: 1;
+}
+
+.authorName {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.authorLocation {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: var(--olive-dust);
+  margin-bottom: 0.5rem;
+}
+
+.productPurchased {
+  margin: 0;
+}
+
+.productLabel {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.75rem;
+  color: var(--olive-dust);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: 0.5rem;
+}
+
+.productName {
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  color: var(--champagne-foil);
+  font-style: italic;
+}
+
+/* Carousel Navigation */
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--champagne-foil);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator.active {
+  background: var(--champagne-foil);
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: var(--champagne-foil);
+  opacity: 0.7;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--champagne-foil);
+  background: var(--cream);
+  color: var(--champagne-foil);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.carouselButton:hover {
+  background: var(--champagne-foil);
+  color: white;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: -25px;
+}
+
+.nextButton {
+  right: -25px;
+}
+
+/* Trust Indicators */
+.trustIndicators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 0 0 0;
+  border-top: 1px solid rgba(139, 149, 109, 0.3);
+  margin-top: 2rem;
+}
+
+.trustItem {
+  text-align: center;
+}
+
+.trustNumber {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: var(--champagne-foil);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.trustLabel {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--olive-dust);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .carouselButton {
+    opacity: 0.6;
+  }
+
+  .prevButton {
+    left: -15px;
+  }
+
+  .nextButton {
+    right: -15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 3rem 0;
+  }
+
+  .testimonialsHeader {
+    margin-bottom: 2rem;
+  }
+
+  .testimonialCarousel {
+    margin-bottom: 2rem;
+  }
+
+  .carouselTrack {
+    height: 300px;
+  }
+
+  .quoteIcon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .testimonialText {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .testimonialAuthor {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .authorDetails {
+    text-align: center;
+  }
+
+  .carouselButton {
+    display: none;
+  }
+
+  .trustIndicators {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0 0 0;
+  }
+
+  .trustNumber {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 2.5rem 0;
+  }
+
+  .carouselTrack {
+    height: 280px;
+  }
+
+  .testimonialText {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .authorAvatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .avatarInitial {
+    font-size: 0.9rem;
+  }
+
+  .carouselIndicators {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .trustIndicators {
+    gap: 1rem;
+    padding: 1rem 0 0 0;
+  }
+
+  .trustNumber {
+    font-size: 2rem;
+  }
+}
