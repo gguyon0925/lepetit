@@ -40,29 +40,31 @@ export default function Philosophy() {
 
   const ingredients = [
     {
-      name: "Provence Lavender",
-      origin: "Valensole, France",
+      name: "Essential Oils",
+      origin: "Around The World",
       benefit: "Calming & antiseptic properties",
       description:
-        "Hand-picked at dawn when essential oils are most concentrated",
+        "Hand-picked at dawn when essential oils are most concentrated and blended with the finest ingredients to create the most luxurious soaps",
     },
     {
-      name: "Organic Olive Oil",
+      name: "Luxury Butters",
+      origin: "Around The World",
+      benefit: "Conditioning & Moisturizing",
+      description:
+        "Rich in fatty acids that reduce inflammation and redness and signs of aging",
+    },
+    {
+      name: "Olive Oil",
       origin: "Tuscany, Italy",
       benefit: "Deep moisturizing & gentle cleansing",
       description: "Cold-pressed within 24 hours of harvest for maximum purity",
     },
     {
-      name: "Himalayan Pink Salt",
-      origin: "Pakistan",
-      benefit: "Natural exfoliation & mineral rich",
-      description: "Ancient salt deposits provide gentle detoxification",
-    },
-    {
-      name: "French Green Clay",
-      origin: "Montmorillon, France",
-      benefit: "Purifying & oil-balancing",
-      description: "Rich in minerals that draw out impurities naturally",
+      name: "Carrying Oils",
+      origin: "Around The World",
+      benefit: "Nourishing & Protecting Properties",
+      description:
+        "Rich in vitamins, antioxidants, and essential fatty acids that nourish and protect the skin",
     },
   ];
 

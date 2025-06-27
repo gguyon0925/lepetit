@@ -31,7 +31,7 @@ export default function HeroLuxury() {
             <p className={styles.description}>
               Each bar is meticulously crafted using centuries-old French
               techniques, combining pure essential oils with sustainably sourced
-              botanicals to create an unparalleled sensory experience.
+              ingredients to create an unparalleled sensory experience.
             </p>
 
             <div className={styles.features}>
