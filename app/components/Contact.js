@@ -7,7 +7,8 @@ export default function Contact() {
         <div className={styles.contactHeader}>
           <h2 className={styles.contactTitle}>Get in Touch</h2>
           <p className={styles.contactSubtitle}>
-            We'd love to hear from you. Send us a message and we'll respond. 
+            We'd love to hear from you. Send us a message and we'll respond.
+          </p>
         </div>
 
         <div className={styles.contactContent}>
